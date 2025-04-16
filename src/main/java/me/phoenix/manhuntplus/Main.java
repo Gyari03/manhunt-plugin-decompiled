@@ -64,7 +64,6 @@ import org.bukkit.ChatColor;
 /*  66 */     pm.registerEvents((Listener)new DropRespawnEvent(this), (Plugin)this);
 /*  67 */     pm.registerEvents((Listener)new DisconnectDamageEvent(this), (Plugin)this);
 /*  68 */     pm.registerEvents((Listener)new DeathBlockBreakEvent(this), (Plugin)this);
-/*  69 */     pm.registerEvents((Listener)new MCChatEvent(this), (Plugin)this);
 /*  70 */     pm.registerEvents((Listener)new PiglinPearlEvent(this), (Plugin)this);
 /*     */   }
 /*     */ 
