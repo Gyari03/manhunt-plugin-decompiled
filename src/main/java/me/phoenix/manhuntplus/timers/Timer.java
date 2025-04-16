@@ -45,9 +45,9 @@ public class Timer {
 
     public void stopTimer(){
         running = false;
-        if(timerThread != null){
-            timerThread.interrupt();
-        }
+        //if(timerThread != null){
+        //    timerThread.interrupt();
+        //}
     }
 
     public void sendTime(){
