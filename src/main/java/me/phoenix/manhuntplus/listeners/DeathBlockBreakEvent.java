@@ -36,6 +36,8 @@ import org.bukkit.event.block.BlockBreakEvent;
 /*  35 */         Bukkit.broadcastMessage(ChatColor.GREEN + "The hunter wins! Do /huntplus start to play again!");
 /*     */       } 
 /*  37 */       if (this.plugin.deadRunners.size() > 0) {
+            plugin.timer.sendTime();
+            plugin.timer.stopTimer();
 /*  38 */         for (String name : this.plugin.deadRunners) {
 /*  39 */           Player deadRunner = Bukkit.getPlayer(name);
 /*  40 */           if (deadRunner.isOnline()) {

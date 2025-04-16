@@ -4,7 +4,8 @@
 /*    */ import java.util.List;
 /*    */ import me.phoenix.manhuntplus.Main;
 /*    */ import me.phoenix.manhuntplus.api.HuntStartEvent;
-/*    */ import org.bukkit.Bukkit;
+/*    */ import me.phoenix.manhuntplus.timers.Timer;
+import org.bukkit.Bukkit;
 /*    */ import org.bukkit.ChatColor;
 /*    */ import org.bukkit.entity.Player;
 /*    */ import org.bukkit.event.Event;
@@ -58,6 +59,7 @@
 /* 58 */       Player runner = (Player)event.getDamager();
 /* 59 */       Player hunter = (Player)event.getEntity();
 /* 60 */       if (this.plugin.isRunner(runner) && this.plugin.isHunter(hunter)) {
+                plugin.timer.startTimer();
 /* 61 */         Bukkit.broadcastMessage(ChatColor.GREEN + "" + ChatColor.BOLD + "The hunt has begun!");
 /* 62 */         this.plugin.waitingRunner = false;
 /* 63 */         this.plugin.inGame = true;

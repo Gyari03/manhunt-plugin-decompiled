@@ -12,7 +12,8 @@
 /*     */ import me.phoenix.manhuntplus.tabcompleters.HunterTabCompleter;
 import me.phoenix.manhuntplus.tabcompleters.HuntplusTabCompleter;
 /*     */ import me.phoenix.manhuntplus.tabcompleters.RunnerTabCompleter;
-/*     */ import org.bukkit.Bukkit;
+/*     */ import me.phoenix.manhuntplus.timers.Timer;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 /*     */ import org.bukkit.Material;
 /*     */ import org.bukkit.command.CommandExecutor;
@@ -27,6 +28,9 @@ import org.bukkit.ChatColor;
 /*     */ import org.bukkit.plugin.java.JavaPlugin;
 /*     */ 
 /*     */ public final class Main extends JavaPlugin {
+
+            public Timer timer = new Timer(this);
+
 /*  30 */   public List<String> hunters = new ArrayList<>();
 /*  31 */   public List<String> speedRunners = new ArrayList<>();
 /*  32 */   public List<String> deadRunners = new ArrayList<>();
