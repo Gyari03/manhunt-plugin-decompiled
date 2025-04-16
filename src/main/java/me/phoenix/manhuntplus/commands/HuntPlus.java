@@ -122,7 +122,7 @@ import org.bukkit.command.CommandExecutor;
 /* 119 */               for (String name : this.plugin.hunters) {
 /* 120 */                 Player hunter = Bukkit.getPlayer(name);
 /* 121 */                 hunter.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 2147483647, 3, true, false));
-/* 122 */                 hunter.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 2147483647, -50, true, false));
+/* 122 */                 hunter.addPotionEffect(new PotionEffect(PotionEffectType.JUMP_BOOST, 2147483647, -50, true, false)); //TODO: sztem ez így kell hogy legyen
 /* 123 */                 hunter.setWalkSpeed(0.0F);
 /*     */               } 
 /* 125 */               Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask((Plugin)this.plugin, new Runnable()
@@ -175,7 +175,7 @@ import org.bukkit.command.CommandExecutor;
 /*     */                       } 
 /* 173 */                       this.countdown--;
 /*     */                     }
-/*     */                   }0L, 20L);
+/*     */                   },0L, 20L);
 /*     */               
 /* 177 */               return true;
 /*     */             } 

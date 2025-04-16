@@ -10,7 +10,8 @@
 /*     */ import org.bukkit.entity.Player;
 /*     */ import org.bukkit.event.Event;
 /*     */ import org.bukkit.event.EventHandler;
-/*     */ import org.bukkit.event.block.BlockBreakEvent;
+/*     */ import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockBreakEvent;
 /*     */ import org.bukkit.event.entity.EntityDamageEvent;
 /*     */ import org.bukkit.event.entity.EntityDeathEvent;
 /*     */ import org.bukkit.event.entity.PlayerDeathEvent;
@@ -65,7 +66,7 @@
 /*  65 */             player.getWorld().spawnParticle(Particle.valueOf(this.plugin.getConfig().getString("particleEffect")), player.getLocation(), 20);
 /*  66 */           } catch (Exception e) {
 /*  67 */             this.plugin.getLogger().severe("Particle type is invalid. Playing default particle. Please change it in the config file");
-/*  68 */             player.getWorld().spawnParticle(Particle.EXPLOSION_NORMAL, player.getLocation(), 20);
+/*  68 */             player.getWorld().spawnParticle(Particle.EXPLOSION, player.getLocation(), 20);
 /*     */           } 
 /*     */         }
 /*  71 */         player.getWorld().playSound(player.getLocation(), Sound.ENTITY_LIGHTNING_BOLT_IMPACT, 1.0F, 1.0F);

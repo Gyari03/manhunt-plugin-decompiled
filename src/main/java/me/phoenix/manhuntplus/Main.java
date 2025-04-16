@@ -9,10 +9,9 @@
 /*     */ import me.phoenix.manhuntplus.commands.Runner;
 /*     */ import me.phoenix.manhuntplus.listeners.*;
 /*     */
-/*     */ import me.phoenix.manhuntplus.tabcompleters.HuntplusTabCompleter;
+/*     */ import me.phoenix.manhuntplus.tabcompleters.HunterTabCompleter;
+import me.phoenix.manhuntplus.tabcompleters.HuntplusTabCompleter;
 /*     */ import me.phoenix.manhuntplus.tabcompleters.RunnerTabCompleter;
-/*     */ import net.dv8tion.jda.api.JDABuilder;
-/*     */ import net.dv8tion.jda.api.entities.Activity;
 /*     */ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 /*     */ import org.bukkit.Material;
@@ -39,7 +38,6 @@ import org.bukkit.ChatColor;
 /*     */   public boolean countingDown = false;
 /*     */   
 /*     */   public boolean waitingRunner = false;
-/*     */   public JDA bot;
 /*  42 */   File config = new File(getDataFolder() + File.separator + "config.yml");
 /*     */ 
 /*     */   
@@ -48,7 +46,6 @@ import org.bukkit.ChatColor;
 /*  47 */     checkConfig();
 /*  48 */     registerCommands();
 /*  49 */     registerEvents();
-/*  50 */     discordBot();
 /*     */   }
 /*     */   
 /*     */   private void registerCommands() {
@@ -88,25 +85,7 @@ import org.bukkit.ChatColor;
 /*  87 */       getLogger().info("Creation successful!");
 /*     */     } 
 /*     */   }
-/*     */   
-/*     */   private void discordBot() {
-/*  92 */     if (!getConfig().getBoolean("discordIntegration")) {
-/*     */       return;
-/*     */     }
-/*  95 */     if (getServer().getPluginManager().getPlugin("JDA") == null) {
-/*  96 */       getLogger().info("Discord integration requires JDA");
-/*  97 */       getLogger().info("Download newest version:  https://www.spigotmc.org/resources/jda.80824/");
-/*     */       return;
-/*     */     } 
-/*     */     try {
-/* 101 */       this.bot = JDABuilder.createDefault(getConfig().getString("botToken")).setActivity(Activity.watching(" " + getConfig().getString("botActivityMessage"))).addEventListeners(new Object[] { new DiscordCommands(this) }).build().awaitReady();
-/* 102 */     } catch (LoginException|InterruptedException e) {
-/* 103 */       getLogger().severe("Please put in a valid token for the discord bot to work");
-/* 104 */       getLogger().severe("Paste the bot token in the selected part of the config");
-/*     */       return;
-/*     */     } 
-/* 107 */     getLogger().info("Bot running successful!");
-/*     */   }
+/*     */
 /*     */   
 /*     */   public ItemStack ruleBook() {
 /* 111 */     ItemStack book = new ItemStack(Material.WRITTEN_BOOK);
