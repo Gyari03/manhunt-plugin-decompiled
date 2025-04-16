@@ -19,7 +19,7 @@ public class Timer {
     public void startTimer(){
         running = true;
         timerThread = new Thread(()->{
-            while(true){
+            while(running){
                 try {
                     tick();
                     if(seconds % 600 == 0)
