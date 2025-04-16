@@ -16,7 +16,11 @@
 /*    */   
 /*    */   @Nullable
 /*    */   public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-/* 19 */     if (sender == null) $$$reportNull$$$0(0);  if (command == null) $$$reportNull$$$0(1);  if (label == null) $$$reportNull$$$0(2);  if (args == null) $$$reportNull$$$0(3);  if (this.arguments.isEmpty()) {
+    if (sender == null || command == null || label == null || args == null) {
+        return null;
+    }
+
+/* 19 */     if (this.arguments.isEmpty()) {
 /* 20 */       this.arguments.add("add");
 /* 21 */       this.arguments.add("remove");
 /* 22 */       this.arguments.add("list");

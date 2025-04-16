@@ -16,13 +16,20 @@
 /*    */   
 /*    */   @Nullable
 /*    */   public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-/* 19 */     if (sender == null) $$$reportNull$$$0(0);  if (command == null) $$$reportNull$$$0(1);  if (label == null) $$$reportNull$$$0(2);  if (args == null) $$$reportNull$$$0(3);  if (this.arguments.isEmpty()) {
-/* 20 */       this.arguments.add("add");
-/* 21 */       this.arguments.add("remove");
-/* 22 */       this.arguments.add("list");
-/* 23 */       this.arguments.add("clear");
-/* 24 */       this.arguments.add("help");
-/*    */     } 
+            if (sender == null || command == null || label == null || args == null) {
+                return null;
+            }
+
+            // Initialize the list of valid arguments (commands)
+            if (this.arguments.isEmpty()) {
+                this.arguments.add("add");
+                this.arguments.add("remove");
+                this.arguments.add("list");
+                this.arguments.add("clear");
+                this.arguments.add("help");
+            }
+
+
 /* 26 */     List<String> result = new ArrayList<>();
 /* 27 */     if (args.length == 1) {
 /* 28 */       for (String subcommand : this.arguments) {
