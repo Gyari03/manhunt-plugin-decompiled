@@ -1,0 +1,34 @@
+name: ManhuntPlus
+version: 1.4.1
+main: me.phoenix.manhuntplus.Main
+author: UmbralPhoenix
+api-version: 1.16
+description: Allows you to play minecraft manhunt with extra features
+website: https://www.spigotmc.org/resources/manhunt-1-16x-1-18x.86708
+softdepend:
+  - JDA
+
+commands:
+  hunter:
+    description: Use to add hunters and more
+    permission: manhuntplus.hunter
+  runner:
+    description: Use to add speedrunners and more
+    permission: manhuntplus.speedrunner
+  huntplus:
+    description: Start a hunt, reload the config, and more
+    permission: manhuntplus.huntplus
+
+permissions:
+  manhuntplus.*:
+    description: Every permission in ManhuntPlus
+    children:
+      manhuntplus.hunter: true
+      manhuntplus.speedrunner: true
+      manhuntplus.huntplus: true
+  manhuntplus.hunter:
+    description: Allows use of the hunter command
+  manhuntplus.speedrunner:
+    description: Allows use of the runner command
+  manhuntplus.huntplus:
+    description: Allows use of the huntplus command
